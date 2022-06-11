@@ -489,10 +489,10 @@ apt update -y;apt install iproute2 openresolv dnsutils iptables -y;apt install w
 elif [[ $release = Ubuntu ]]; then
 apt update -y;apt install iproute2 openresolv dnsutils iptables -y;apt install wireguard-tools --no-install-recommends -y			
 fi
-[[ $cpu = AMD64 ]] && wget -N https://cdn.jsdelivr.net/gh/ygkkkyb/CFwarp/wgcf_2.2.14_amd64 -O /usr/local/bin/wgcf && chmod +x /usr/local/bin/wgcf         
-[[ $cpu = ARM64 ]] && wget -N https://cdn.jsdelivr.net/gh/ygkkkyb/CFwarp/wgcf_2.2.14_arm64 -O /usr/local/bin/wgcf && chmod +x /usr/local/bin/wgcf
+[[ $cpu = AMD64 ]] && wget -N https://cdn.jsdelivr.net/gh/funct-en/push/wgcf_2.2.14_amd64 -O /usr/local/bin/wgcf && chmod +x /usr/local/bin/wgcf         
+[[ $cpu = ARM64 ]] && wget -N https://cdn.jsdelivr.net/gh/funct-en/push/wgcf_2.2.14_arm64 -O /usr/local/bin/wgcf && chmod +x /usr/local/bin/wgcf
 if [[ $main -lt 5 || $minor -lt 6 ]] || [[ $vi =~ lxc|openvz ]]; then
-[[ -e /usr/bin/wireguard-go ]] || wget -N https://cdn.jsdelivr.net/gh/ygkkkyb/CFwarp/wireguard-go -O /usr/bin/wireguard-go && chmod +x /usr/bin/wireguard-go
+[[ -e /usr/bin/wireguard-go ]] || wget -N https://cdn.jsdelivr.net/gh/funct-en/push/wireguard-go -O /usr/bin/wireguard-go && chmod +x /usr/bin/wireguard-go
 fi
 echo | wgcf register
 until [[ -e wgcf-account.toml ]]
